@@ -299,6 +299,9 @@ const showUser = ref(true);
 const showMall = ref(true);
 
 console.log("theme", theme.value);
+const languageIcon = ref(
+  "https://tentech.oss-cn-shenzhen.aliyuncs.com/icon/language-icon.svg"
+);
 
 const isShowSearch = computed(() => {
   if (whiteList.value.includes(route.path)) {
@@ -629,12 +632,6 @@ const whiteBackgroundList = ref([]);
 
 //需要导航栏
 const needNav = ref(false);
-
-const languageIcon = computed(() => {
-  return theme.value === "nav-top"
-    ? "https://tentech.oss-cn-shenzhen.aliyuncs.com/icon/language.svg"
-    : "https://tentech.oss-cn-shenzhen.aliyuncs.com/icon/language1.svg";
-});
 
 watch(
   () => router.currentRoute.value.path,

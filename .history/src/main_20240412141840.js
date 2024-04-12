@@ -3,7 +3,7 @@ import { createApp, watch, ref } from 'vue'
 import { createPinia } from 'pinia'
 
 import router from './router/index.js'
-import i18n from './locales/lang/index.ts';
+import i18n from './locales/index.ts';
 
 
 

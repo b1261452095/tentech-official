@@ -159,7 +159,11 @@
                   <img
                     style="width: 33px"
                     class="icon-search"
-                    :src="languageIcon"
+                    :src="
+                      theme === 'nav-top'
+                        ? 'https://tentech.oss-cn-shenzhen.aliyuncs.com/icon/language.svg'
+                        : 'https://tentech.oss-cn-shenzhen.aliyuncs.com/icon/language1.svg'
+                    "
                   />
                 </a>
               </li>
@@ -299,16 +303,6 @@ const showUser = ref(true);
 const showMall = ref(true);
 
 console.log("theme", theme.value);
-
-const isShowSearch = computed(() => {
-  if (whiteList.value.includes(route.path)) {
-    return false;
-  } else if (relativeList.value.includes(route.path)) {
-    return true;
-  } else {
-    return showSearch.value;
-  }
-});
 
 const languageList = ref(allLanguage.language);
 
@@ -630,12 +624,6 @@ const whiteBackgroundList = ref([]);
 //需要导航栏
 const needNav = ref(false);
 
-const languageIcon = computed(() => {
-  return theme.value === "nav-top"
-    ? "https://tentech.oss-cn-shenzhen.aliyuncs.com/icon/language.svg"
-    : "https://tentech.oss-cn-shenzhen.aliyuncs.com/icon/language1.svg";
-});
-
 watch(
   () => router.currentRoute.value.path,
   (newValue) => {
@@ -647,12 +635,8 @@ watch(
 function setTheme(path: string) {
   if (path === "/") {
     theme.value = "nav-top";
-    languageIcon.value =
-      "https://tentech.oss-cn-shenzhen.aliyuncs.com/icon/language.svg";
   } else {
     theme.value = "nav-bottom";
-    languageIcon.value =
-      "https://tentech.oss-cn-shenzhen.aliyuncs.com/icon/language1.svg";
   }
 }
 

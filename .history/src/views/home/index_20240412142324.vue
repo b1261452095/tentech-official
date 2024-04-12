@@ -6,7 +6,6 @@
     <div class="hot-product-container">
       <div class="index_pro_title_group1">
         <span class="index_pro_title1">{{ t("home.productExpress") }}</span>
-
         <div class="title-underline"></div>
       </div>
       <div class="product-container">
