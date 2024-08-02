@@ -1,3 +1,11 @@
+/*
+ * @Description: 
+ * @Author: Bhb
+ * @Date: 2024-04-10 16:12:51
+ * @LastEditors: Bhb
+ * @LastEditTime: 2024-04-12 14:18:53
+ * @FilePath: \tentech-official\src\locales\index.ts
+ */
 import { createI18n } from 'vue-i18n';
 
 // @ts-ignore
