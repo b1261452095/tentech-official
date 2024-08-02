@@ -1,140 +1,138 @@
 <template>
-  <div class="container">
-    <div class="home-banner-container">
-      <home-banner :pic-list="homeBanner"></home-banner>
-    </div>
-    <div class="hot-product-container">
-      <div class="index_pro_title_group1">
-        <span class="index_pro_title1">{{ t('home.productExpress') }}</span>
-        <div class="title-underline"></div>
+  <div id="content">
+    <div class="container" id="container">
+      <div class="home-banner-container item-content" >
+        <home-banner :pic-list="homeBanner"></home-banner>
       </div>
-      <div class="product-container">
-        <div v-for="(hotItem ,HIndex)  in hotProduct" class="hot-product-item" :class="{'hot-item-hover':hotItem.isHover}"
-             @click="gotoProductspage(hotItem)"
-             @mouseover="hotItem.isHover=true"
-             @mouseleave="hotItem.isHover=false">
-          <div class="hot-product-img-container">
-            <img :src="hotItem.imgUrl">
-          </div>
-          <div class="hot-product-intro-container">
-            <p>{{ t(hotItem.productName)}}</p>
-            <div class="learn-more-button">
-              <p>{{ t('common.learnMore') }}</p>
+      <div class="hot-product-container item-content">
+        <div class="index_pro_title_group1">
+          <span class="index_pro_title1">{{ t('home.productExpress') }}</span>
+          <div class="title-underline"></div>
+        </div>
+        <div class="product-container">
+          <div v-for="(hotItem ,HIndex)  in hotProduct" class="hot-product-item" :class="{'hot-item-hover':hotItem.isHover}"
+               @click="gotoProductspage(hotItem)"
+               @mouseover="hotItem.isHover=true"
+               @mouseleave="hotItem.isHover=false">
+            <div class="hot-product-img-container">
+              <img :src="hotItem.imgUrl">
+            </div>
+            <div class="hot-product-intro-container">
+              <p>{{ t(hotItem.productName)}}</p>
+              <div class="learn-more-button">
+                <p>{{ t('common.learnMore') }}</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="about-us-container">
-      <div class="index_pro_title_group1">
-        <span class="index_pro_title1 aboutUs">{{ t('menu.about') }}</span>
-        <div class="title-underline"></div>
-      </div>
-      <div class="about-us-detail-container">
-
-        <div class="about-us-img-container">
-          <div class="about-us-intro-img-container">
-            <img src="https://tentech.oss-cn-shenzhen.aliyuncs.com/images/about-us/about-us-company-01.jpg">
-          </div>
+      <div class="about-us-container item-content">
+        <div class="index_pro_title_group1">
+          <span class="index_pro_title1 aboutUs">{{ t('menu.about') }}</span>
+          <div class="title-underline"></div>
         </div>
+        <div class="about-us-detail-container">
 
-        <div class="about-us-intro-container">
-          <div class="about-us-company-intro-container">
-            <p>{{t('common.visualTechnology')}}</p>
+          <div class="about-us-img-container">
+            <div class="about-us-intro-img-container">
+              <img src="https://imgapi.cn/api.php?fl=fengjing&gs=images&type=45">
+            </div>
           </div>
-          <div class="company-desc-container">
-            <p>{{ t('common.companyDescription') }}</p>
 
-          </div>
-          <div class="intro-detail-button"
-          @click="router.push({path:'/aboutus',query:{seriesId:'companyIntro'}})"
-          >
-            <p>{{ t('common.detail') }}</p>
-          </div>
-        </div>
+          <div class="about-us-intro-container">
+            <div class="about-us-company-intro-container">
+              <p>{{t('common.visualTechnology')}}</p>
+            </div>
+            <div class="company-desc-container">
+              <p>{{ t('common.companyDescription') }}</p>
 
-      </div>
-    </div>
-    <div class="featured-product-container">
-      <div class="featured-product-detail-container">
-        <div class="featured-product-title-container">
-          <p>{{ t('home.featuredProducts') }}</p>
-          <div class="title-underline featured"></div>
-        </div>
-        <div class="product-list-swiper-container">
-          <product-list-swiper class="full-width" :product-swiper-list="featuredProduct"></product-list-swiper>
-          <product-list-swiper-min class="min-width-container" :product-swiper-list="featuredProduct"></product-list-swiper-min>
+            </div>
+            <div class="intro-detail-button"
+                 @click="router.push({path:'/aboutus',query:{seriesId:'companyIntro'}})"
+            >
+              <p>{{ t('common.detail') }}</p>
+            </div>
+          </div>
+
         </div>
       </div>
-    </div>
-    <div class="hot-sell-products-container">
-      <div class="featured-product-detail-container">
-        <div class="featured-product-title-container">
-          <p style="color: #2e7be5">{{ t('home.caseShow') }}</p>
-          <div class="title-underline show-case-underline"></div>
+      <div class="featured-product-container item-content">
+        <div class="featured-product-detail-container">
+          <div class="featured-product-title-container">
+            <p>{{ t('home.featuredProducts') }}</p>
+            <div class="title-underline featured"></div>
+          </div>
+          <div class="product-list-swiper-container">
+            <product-list-swiper class="full-width" :product-swiper-list="featuredProduct"></product-list-swiper>
+            <product-list-swiper-min class="min-width-container" :product-swiper-list="featuredProduct"></product-list-swiper-min>
+          </div>
         </div>
-        <div class="product-list-swiper-container case-show-container">
+      </div>
+      <div class="hot-sell-products-container item-content">
+        <div class="featured-product-detail-container">
+          <div class="featured-product-title-container">
+            <p style="color: #2e7be5">{{ t('home.caseShow') }}</p>
+            <div class="title-underline show-case-underline"></div>
+          </div>
+          <div class="product-list-swiper-container case-show-container">
 
-          <div class="case-show-item" :class="showCase.isSelected? 'showCaseSelected':''"
-               v-for="(showCase,index) in caseList"
-               :style="{'background-image': `url(\' ${showCase.imgUrl} \')`,
+            <div class="case-show-item" :class="showCase.isSelected? 'showCaseSelected':''"
+                 v-for="(showCase,index) in caseList"
+                 :style="{'background-image': `url(\' ${showCase.imgUrl} \')`,
                'background-size':' cover','background-position': 'center'}"
-               @mouseover="showCaseItemFun(showCase)">
-<!--            <img style="filter: brightness(0.65)" :src="showCase.imgUrl">-->
-            <router-link :to="showCase.path" class="show-case-desc" :class="{'show-desc-select':showCase.isSelected}">
+                 @mouseover="showCaseItemFun(showCase)">
+              <!--            <img style="filter: brightness(0.65)" :src="showCase.imgUrl">-->
+              <router-link :to="showCase.path" class="show-case-desc" :class="{'show-desc-select':showCase.isSelected}">
                 <img :src="showCase.icon">
                 <h1>{{ t(showCase.title) }}</h1>
                 <p v-if="showCase.isSelected">{{t(showCase.desc)}}</p>
-            </router-link>
+              </router-link>
+            </div>
+
+
           </div>
-
-
         </div>
       </div>
-    </div>
-    <div class="news-list-container">
-      <div class="news-container">
-        <div style="margin-bottom: 32px" class="case-title-container">
-          <p>{{ t('menu.news') }}</p>
-          <div class="title-underline show-case-underline"></div>
-        </div>
-        <div class="news-item-container">
+      <div class="news-list-container item-content">
+        <div class="news-container">
+          <div style="margin-bottom: 32px" class="case-title-container">
+            <p>{{ t('menu.news') }}</p>
+            <div class="title-underline show-case-underline"></div>
+          </div>
+          <div class="news-item-container">
 
-<!--          <div class="news-item-show news-show-list">
-            <div class="news-item-list-show">
+            <!--          <div class="news-item-show news-show-list">
+                        <div class="news-item-list-show">
 
-            </div>
-          </div>-->
-          <router-link :to="newsItem.path" style="cursor: pointer;" class="news-item-show news-item-hover" v-for="(newsItem,index) in newsList">
-            <img :src="newsItem.imgUrl">
-            <div class="news-desc">
-              <p>{{newsItem.YearAndMonth}}</p>
-              <h2>{{t(newsItem.intro)}}</h2>
-              <div class="gotoNewDetail">
-                <img src="https://tentech.oss-cn-shenzhen.aliyuncs.com/images/news/new-arrow.png">
+                        </div>
+                      </div>-->
+            <router-link :to="newsItem.path" style="cursor: pointer;" class="news-item-show news-item-hover" v-for="(newsItem,index) in newsList">
+              <img :src="newsItem.imgUrl">
+              <div class="news-desc">
+                <p>{{newsItem.YearAndMonth}}</p>
+                <h2>{{t(newsItem.intro)}}</h2>
+                <div class="gotoNewDetail">
+                  <img src="https://tentech.oss-cn-shenzhen.aliyuncs.com/images/news/new-arrow.png">
+                </div>
               </div>
-            </div>
-          </router-link>
+            </router-link>
 
 
+          </div>
         </div>
       </div>
+      <div class="tentech-intro-container item-content">
+      </div>
     </div>
-    <div class="tentech-intro-container">
-
-    </div>
-
-
-
-
   </div>
+
 </template>
 
 <script lang="ts" setup>
 import { useRoute, useRouter } from "vue-router";
 const router = useRouter()
 const route = useRoute()
-import {onBeforeMount, onMounted, ref} from 'vue'
+import {inject, onBeforeMount, onMounted, ref} from 'vue'
 import home from "../../assets/ts/home/home";
 import HomeBanner from "../../components/home/home-banner.vue";
 import ProductListSwiper from "../../components/product-list-swiper.vue";
@@ -143,13 +141,15 @@ import {useI18n} from "vue-i18n";
 const { t,locale } = useI18n();
 import partnersList from "../../assets/ts/partners-list";
 import ProductListSwiperMin from "../../components/product-list-swiper-min.vue";
+import {gsap} from "gsap";
+import {SplitText} from "gsap/SplitText";
 
-
+const gsapParams = inject('gsapParams') as any
 
 const pageSEOInfo = ref({
-  title: 'LED显示屏 ,Led显示屏箱体，led显示屏工厂、led拼接屏，led室外屏，led室内屏，led显示屏租赁、led全彩显示屏、led显示屏压铸箱体，租赁led显示屏,广告条屏 ，显示屏解决方案',
-  description: '深圳市全德视讯有限公司成立于2015年，是一家创新型专注于生产LED 显示屏的公司，拥有自己的实力工厂，我司通过提供可靠的LED显示屏产品及LED显示屏配件，24小时咨询热线: 0755 27192472',
-  keywords: 'led显示屏 ,led显示屏箱体，led显示屏工厂、显示屏生产厂家、led拼接屏，led户外显示屏，led室内屏，led显示屏租赁、led全彩显示屏、led显示屏压铸箱体，led模组、租赁led显示屏'
+  title: '大道之始',
+  description: '天地玄黄,万物本根',
+  keywords: '八奇技'
 });
 
 onBeforeMount(() => {
@@ -167,6 +167,25 @@ onBeforeMount(() => {
   }
 });
 
+onMounted(()=>{
+  const smoother = gsapParams.smoother
+  let tl = gsap.timeline({
+    repeat: -1,
+    delay: 0.5,
+    scrollTrigger: {
+      trigger: '.end',
+      start: 'bottom 100%-=50px'
+    }
+  });
+  let mySplitText = new SplitText(".index_pro_title1", { type: "words,chars" });
+  let chars = mySplitText.chars;
+  console.log('chars',chars)
+
+  chars.forEach((char, i) => {
+    smoother.effects(char, { speed: 1, lag: (i + 1) * 0.1 });
+  });
+})
+
 
 const homeBanner = ref(home.homeBannerList)
 const hotProduct = ref(home.hotProductList)
@@ -177,6 +196,10 @@ const caseList = ref(home.caseList)
 const newsList = ref(home.newsList)
 
 
+/**
+ * 跳转到产品页面
+ * @param hotItem
+ */
 function gotoProductspage(hotItem){
   router.push({
     path: hotItem.path,
@@ -196,16 +219,10 @@ function showCaseItemFun(showCase){
   showCase.isSelected = true
 }
 
-onBeforeMount(()=>{
-  // const homeBanner = ref(home.homeBannerList)
-  // const hotProduct = ref(home.hotProductList)
-  // const featuredProduct =ref(home.featuredProductList)
-  // const hotSellProduct =ref(home.hotSellProductList)
-  // const quickLinks = ref(home.quickLinks)
-  // const caseList = ref(home.caseList)
-  // const newsList = ref(home.newsList)
-  // const partners = ref(partnersList)
-})
+
+
+
+
 </script>
 
 <style scoped>
@@ -350,7 +367,7 @@ onBeforeMount(()=>{
 
 }
 .about-us-container{
-  background-image: url("https://tentech.oss-cn-shenzhen.aliyuncs.com/images/background/bg-01.jpg");
+  background-image: url("https://imgapi.cn/api.php?fl=fengjing&gs=images&type=44");
   background-size: cover;
   width: 100%;
   min-height: 550px;
@@ -442,7 +459,7 @@ onBeforeMount(()=>{
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: url("https://tentech.oss-cn-shenzhen.aliyuncs.com/images/background/featured-product-bg-01.jpg");
+  background-image: url("https://imgapi.cn/api.php?fl=fengjing&gs=images&type=49");
   background-size: cover;
 }
 .featured-product-detail-container{
@@ -588,7 +605,7 @@ onBeforeMount(()=>{
   color: #2e7be5;
 }
 .case-list-container{
-  background-image: url("https://tentech.oss-cn-shenzhen.aliyuncs.com/images/background/bg-03.jpg");
+  background-image: url("https://imgapi.cn/api.php?fl=fengjing&gs=images&type=99");
   background-size: cover;
   width: 100%;
   display: flex;
@@ -823,7 +840,7 @@ onBeforeMount(()=>{
   font-size: 17px;
 }
 .partners{
-  background-image: url("https://tentech.oss-cn-shenzhen.aliyuncs.com/images/background/bg-03.jpg");
+  background-image: url("https://imgapi.cn/api.php?fl=fengjing&gs=images&type=11");
   background-size: cover;
 }
 
@@ -855,7 +872,7 @@ onBeforeMount(()=>{
   color: white;
 }
 .tentech-intro-container{
-  background-image: url("https://tentech.oss-cn-shenzhen.aliyuncs.com/images/about-us/city-3213676_1280.jpg");
+  background-image: url("https://imgapi.cn/api.php?fl=fengjing&gs=images&type=422");
   background-size: cover;
   height: 30vh;
   min-height: 350px;

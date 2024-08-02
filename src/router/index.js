@@ -141,6 +141,17 @@ const router = createRouter({
         description: '在线留言', // 添加描述信息
       }
     },
+    {
+      path: '/smoother',
+      name: 'smoother',
+      component: () => import('../views/gsap/smoother.vue'),
+      meta: {
+        title: '动画', // 添加标题信息
+        description: '动画', // 添加描述信息
+      }
+    },
+
+
 
 
 

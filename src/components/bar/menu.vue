@@ -1,5 +1,5 @@
 <template>
-  <div v-if="needNav &&!whiteList.includes(route.path)">
+  <div v-if="needNav &&!whiteList.includes(route.path)" class="heading">
     <div  class="nav-container" :class="{theme}" :style="getHeaderStyle">
       <div v-if="isSwitchLanguages" class="switch-language-dialog">
         <div class="close-bg" @click="openOrCloseSwitchLanguage"></div>

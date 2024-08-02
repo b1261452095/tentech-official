@@ -1,6 +1,6 @@
 export default {
-    "tentech":"全德视讯",
-    "TENTECH":"全德视讯",
+    "tentech":"大道之始",
+    "TENTECH":"大道之始",
     "CHINA":"中国",
     "EMail":"邮件",
     "Download":"下载",
@@ -220,7 +220,7 @@ export default {
         "3-5DAYS":"3-5天",
         "learnMore":"了解更多",
         "detail":"详情",
-        "visualTechnology":"深圳市全德视讯科技有限公司",
+        "visualTechnology":"上京市海纳科技有限公司",
         "companyDescription":"Tentech成立于2015年，是一家专注于为全球提供LED显示产品的创新技术制造商。在过去的2年中，Tentech通过提供可靠的LED显示产品和专业的LED显示解决方案，已经成长为一家成功的公司。此外，Tentech团队在售前咨询和售后支持方面拥有丰富的经验和专业知识，提供具有竞争力价格的高质量产品，有助于我们的合作伙伴在激烈的竞争中脱颖而出。我们的产品已通过CE、FCC、RoHS和ISO9001认证...",
         "24HoursService":"24 小时免费服务热线",
         "relatedProducts":"相关产品",
@@ -236,7 +236,7 @@ export default {
         "smallPixelLedDisplay":"精细/小像素LED显示屏",
         "creativeDisplay":"创意LED显示屏",
         "ledCubeScreen":"LED立方屏幕",
-
+        "about":"关于我们",
         "featuredProducts": "特色产品",
         "ledIposterForShoppingMall": "商场LED互动海报屏",
         "smallPixelFixedInstallationIndoorScreen": "1.25 毫米小像素固定安装室内屏幕",
